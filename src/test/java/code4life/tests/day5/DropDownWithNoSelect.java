@@ -20,11 +20,13 @@ public class DropDownWithNoSelect {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         driver.get("https://demoqa.com/select-menu");
 
-        WebElement selectOne = driver.findElement(By.xpath("(//div[@id='selectOne']//child::div)[7]"));
-        wait.until(ExpectedConditions.elementToBeClickable(selectOne)).click();
+        WebElement selectOne = driver.findElement(By.xpath("(//div[@class=' css-1hwfws3'])[2]"));
+       wait.until(ExpectedConditions.elementToBeClickable(selectOne)).click();
 
         WebElement pronoun = driver.findElement(By.xpath("//div[text()='Mr.']"));
         wait.until(ExpectedConditions.elementToBeClickable(pronoun)).click();
+
+
 
         Thread.sleep(3000);
         driver.quit();
